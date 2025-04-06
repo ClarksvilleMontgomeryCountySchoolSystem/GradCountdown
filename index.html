@@ -15,7 +15,10 @@
       justify-content: center;
       align-items: center;
       height: 100vh; /* Full viewport height */
-      flex-direction: column;
+    }
+    .container {
+      display: flex;
+      align-items: center; /* Align items vertically centered */
     }
     h1 {
       color: #8445d1; /* Retain color for when the banner shows up */
@@ -24,18 +27,24 @@
     }
     #flipdown {
       display: block;
-      margin: 0;
+      margin-left: 20px; /* Space between image and clock */
       padding: 0;
       max-width: 100%;
       width: auto; /* Ensures it scales properly */
       background: transparent; /* Set the clock background to transparent */
     }
+    .image {
+      max-width: 150px; /* Control the image size */
+      height: auto;
+    }
   </style>
 </head>
 <body>
 
-  <h1>🎓 Countdown to Graduation 🎓</h1>
-  <div id="flipdown" class="flipdown"></div>
+  <div class="container">
+    <img src="https://drive.google.com/uc?export=view&id=1WxLKfk9gJPXnNS60gcWG-7x7xQpsOIRw" alt="Graduation" class="image" />
+    <div id="flipdown" class="flipdown"></div>
+  </div>
 
   <script src="https://unpkg.com/flipdown@0.3.2/dist/flipdown.min.js"></script>
   <script>
