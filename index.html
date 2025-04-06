@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graduation Countdown</title>
+  <link rel="stylesheet" href="https://unpkg.com/flipdown@0.3.2/dist/flipdown.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #fdf6ff;
+      text-align: center;
+      padding-top: 50px;
+    }
+    h1 {
+      color: #8445d1;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎓 Countdown to Graduation 🎓</h1>
+  <div id="flipdown" class="flipdown"></div>
+
+  <script src="https://unpkg.com/flipdown@0.3.2/dist/flipdown.min.js"></script>
+  <script>
+    const gradDate = new Date("2025-05-23T16:00:00-05:00");
+    const unixTime = Math.floor(gradDate.getTime() / 1000);
+
+    new FlipDown(unixTime)
+      .start()
+      .ifEnded(() => {
+        document.querySelector("h1").textContent = "🎉 Happy Graduation! 🎉";
+      });
+  </script>
+
+</body>
+</html>
