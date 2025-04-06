@@ -1,62 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Graduation Countdown</title>
-  <link rel="stylesheet" href="https://unpkg.com/flipdown@0.3.2/dist/flipdown.css" />
-  <style>
-    body {
-      font-family: sans-serif;
-      background: url('https://github.com/ClarksvilleMontgomeryCountySchoolSystem/GradCountdown/raw/main/banner.jpg') no-repeat center center fixed;
-      background-size: cover; /* Cover the whole screen */
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: flex-start; /* Align to the left */
-      align-items: center;
-      height: 100vh; /* Full viewport height */
-    }
+body {
+  font-family: sans-serif;
+  background: url('https://github.com/ClarksvilleMontgomeryCountySchoolSystem/GradCountdown/raw/main/banner.jpg') no-repeat center center;
+  background-size: contain; /* Adjust image size to fit the screen without cutting it off */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; /* Align the clock to the left */
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+}
 
-    .container {
-      display: flex;
-      justify-content: flex-start; /* Align the flipdown to the left */
-      align-items: center; /* Vertically center */
-      margin-left: 20px; /* Space between the image and the clock */
-    }
+.container {
+  display: flex;
+  justify-content: flex-start; /* Align the flipdown to the left */
+  align-items: center; /* Vertically center */
+  margin-left: 20px; /* Space between the image and the clock */
+}
 
-    h1 {
-      color: #8445d1;
-      margin-bottom: 20px;
-      display: none;
-    }
+h1 {
+  color: #8445d1;
+  margin-bottom: 20px;
+  display: none;
+}
 
-    #flipdown {
-      display: block;
-      padding: 0;
-      background: transparent;
-    }
-
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <div id="flipdown" class="flipdown"></div>
-  </div>
-
-  <script src="https://unpkg.com/flipdown@0.3.2/dist/flipdown.min.js"></script>
-  <script>
-    const gradDate = new Date("2025-05-23T16:00:00-05:00");
-    const unixTime = Math.floor(gradDate.getTime() / 1000);
-
-    new FlipDown(unixTime)
-      .start()
-      .ifEnded(() => {
-        document.querySelector("h1").textContent = "🎉 Happy Graduation! 🎉";
-        document.querySelector("h1").style.display = 'block'; // Show the banner when countdown ends
-      });
-  </script>
-
-</body>
-</html>
+#flipdown {
+  display: block;
+  padding: 0;
+  background: transparent;
+}
