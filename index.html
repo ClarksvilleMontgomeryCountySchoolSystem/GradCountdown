@@ -9,13 +9,12 @@
     body {
       font-family: sans-serif;
       background: #ffffff; /* Set background to white */
-      text-align: center;
-      padding-top: 50px;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh; /* Full viewport height */
+      flex-direction: column;
     }
     h1 {
       color: #8445d1; /* Retain color for when the banner shows up */
@@ -25,6 +24,8 @@
     #flipdown {
       display: block;
       margin: 0 auto;
+      max-width: 100%;
+      width: auto; /* Ensures it scales properly */
     }
   </style>
 </head>
@@ -43,3 +44,8 @@
       .ifEnded(() => {
         document.querySelector("h1").textContent = "🎉 Happy Graduation! 🎉";
         document.querySelector("h1").style.display = 'block'; // Show the banner when countdown ends
+      });
+  </script>
+
+</body>
+</html>
