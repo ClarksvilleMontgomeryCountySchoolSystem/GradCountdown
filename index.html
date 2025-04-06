@@ -3,44 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Countdown to Graduation</title>
+  <title>Graduation Countdown</title>
   <link rel="stylesheet" href="flipdown/flipdown.css">
   <style>
     body {
-      background-color: #fef6ff;
+      background-color: #ffffff; /* white background */
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
       padding: 0;
-    }
-
-    .container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
     }
 
-    h1 {
-      color: #9b34c6;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
+    .flipdown {
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎓 Countdown to Graduation 🎓</h1>
-    <div id="flipdown" class="flipdown"></div>
-  </div>
+  <div id="flipdown" class="flipdown"></div>
 
   <script src="flipdown/flipdown.js"></script>
   <script>
     // May 23, 2025 at 4:00 PM Central Time
-    var gradTime = new Date("2025-05-23T16:00:00-05:00").getTime() / 1000;
-
-    new FlipDown(gradTime).start();
-  </script>
-</body>
-</html>
+    var gradTime = new Date("2025-05-23T16:
