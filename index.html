@@ -2,31 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Graduation Countdown</title>
-  <link rel="stylesheet" href="flipdown/flipdown.css">
+  <link rel="stylesheet" href="https://unpkg.com/flipdown@0.3.2/dist/flipdown.css" />
   <style>
     body {
-      background-color: #ffffff; /* white background */
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
+      background: #ffffff; /* Changed background to white */
       text-align: center;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding-top: 50px;
     }
-
-    .flipdown {
-      margin-top: 20px;
+    h1 {
+      display: none; /* Removed the banner by hiding the h1 */
     }
   </style>
 </head>
 <body>
+
   <div id="flipdown" class="flipdown"></div>
 
-  <script src="flipdown/flipdown.js"></script>
+  <script src="https://unpkg.com/flipdown@0.3.2/dist/flipdown.min.js"></script>
   <script>
-    // May 23, 2025 at 4:00 PM Central Time
-    var gradTime = new Date("2025-05-23T16:
+    const gradDate = new Date("2025-05-23T16:00:00-05:00");
+    const unixTime = Math.floor(gradDate.getTime() / 1000);
+
+    new FlipDown(unixTime)
+      .start()
+      .ifEnded(() => {
+        document.querySelector("h1").textContent = "🎉 Happy Graduation! 🎉";
+        document.querySelector("h1").style.display = 'block'; // Show the h1 when countdown ends
+      });
+  </script
