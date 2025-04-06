@@ -23,7 +23,7 @@
       justify-content: flex-start; /* Align the flipdown to the left */
       align-items: center; /* Vertically center */
       position: relative; /* Enable positioning */
-      left: 70px; /* Shift the clock 140px to the right */
+      left: 140px; /* Shift the clock 280px to the right */
     }
 
     h1 {
@@ -42,4 +42,21 @@
 <body>
 
   <div class="container">
-    <div id="flipdown" class
+    <div id="flipdown" class="flipdown"></div>
+  </div>
+
+  <script src="https://unpkg.com/flipdown@0.3.2/dist/flipdown.min.js"></script>
+  <script>
+    const gradDate = new Date("2025-05-23T16:00:00-05:00");
+    const unixTime = Math.floor(gradDate.getTime() / 1000);
+
+    new FlipDown(unixTime)
+      .start()
+      .ifEnded(() => {
+        document.querySelector("h1").textContent = "🎉 Happy Graduation! 🎉";
+        document.querySelector("h1").style.display = 'block'; // Show the banner when countdown ends
+      });
+  </script>
+
+</body>
+</html>
