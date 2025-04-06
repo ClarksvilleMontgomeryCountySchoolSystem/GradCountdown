@@ -8,17 +8,20 @@
   <style>
     body {
       font-family: sans-serif;
-      background: #ffffff; /* Changed background to white */
+      background: #ffffff; /* Set background to white */
       text-align: center;
       padding-top: 50px;
     }
     h1 {
-      display: none; /* Removed the banner by hiding the h1 */
+      color: #8445d1; /* Retain color for when the banner shows up */
+      margin-bottom: 20px;
+      display: none; /* Hide banner initially */
     }
   </style>
 </head>
 <body>
 
+  <h1>🎓 Countdown to Graduation 🎓</h1>
   <div id="flipdown" class="flipdown"></div>
 
   <script src="https://unpkg.com/flipdown@0.3.2/dist/flipdown.min.js"></script>
@@ -30,6 +33,6 @@
       .start()
       .ifEnded(() => {
         document.querySelector("h1").textContent = "🎉 Happy Graduation! 🎉";
-        document.querySelector("h1").style.display = 'block'; // Show the h1 when countdown ends
+        document.querySelector("h1").style.display = 'block'; // Show the banner when countdown ends
       });
-  </script
+  </script>
